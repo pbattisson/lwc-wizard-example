@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <c-progress-bar steps={steps} type="bar" current-step={current} ></c-progress-bar>
+        <c-progress-bar steps={steps} type="indicator" current-step={current} ></c-progress-bar>
+        <c-progress-bar steps={steps} type="path" current-step={current} ></c-progress-bar>
+        <template if:true={step1}>
+            <c-wizard-step1 onnext={handleNext}>/</c-wizard-step1>
+        </template>
+        <template if:true={step2}>
+            <c-wizard-step2 contact-id={contactId} onnext={handleNext}>/</c-wizard-step2>
+        </template>
+        <template if:true={step3}>
+            <c-wizard-step3 contact-id={contactId} onnext={handleNext}>/</c-wizard-step3>
+        </template>
+    </lightning-card>
+</template>

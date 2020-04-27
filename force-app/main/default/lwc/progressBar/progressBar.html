@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-var-p-around_small">
+        <template if:true={isIndicator}>
+            <lightning-progress-indicator current-step={currentStep} type="base" variant="base">
+                <template for:each={steps} for:item="step">
+                    <lightning-progress-step label={step.label} value={step.value} key={step.value}></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>
+        </template>
+        <template if:true={isPath}>
+            <lightning-progress-indicator current-step={currentStep} type="path" variant="base">
+                <template for:each={steps} for:item="step">
+                    <lightning-progress-step label={step.label} value={step.value} key={step.value}></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>
+        </template>
+        <template if:true={isBar}>
+            <lightning-progress-bar value={progress} size="large"></lightning-progress-bar>
+        </template>
+    </div>
+</template>
